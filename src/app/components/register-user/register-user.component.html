@@ -1,0 +1,88 @@
+<div class="container bg-white mx-auto px-4 h-full py-4">
+
+    <div class="justify-between rounded-t mb-0 px-4 py-3 border-0 pt-6 bg-white">
+      <div class="text-center">
+        <h3 class="font-semibold text-lg">
+          Registro
+        </h3>
+      </div>
+    </div>
+  
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+        <form [formGroup]="form">
+            <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-slate-600 text-xs font-bold mb-2"
+                  htmlFor="user_name">
+                  Usuario
+                </label>
+                <input
+                  type="text" name="user_name" formControlName="user_name"
+                  class="border-2 px-3 py-3 placeholder-slate-300 text-slate-600 
+                  bg-white rounded text-sm shadow-lg border-gray-300 focus:outline-none focus:ring
+                  w-full ease-linear transition-all duration-150"
+                  placeholder="user_name" />
+                  <div *ngFor="let validation of validationMessages.user_name">
+                    <span *ngIf="formService.field(form, validation.type, 'user_name')" class="mt-2 text-sm text-red-500 ">
+                      {{ validation.message }}
+                    </span>
+                  </div>
+              </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-slate-600 text-xs font-bold mb-2"
+              htmlFor="grid-password">
+              Correo
+            </label>
+            <input
+              type="text" name="email" formControlName="email"
+              class="border-2 px-3 py-3 placeholder-slate-300 text-slate-600 
+              bg-white rounded text-sm shadow-lg border-gray-300 focus:outline-none focus:ring
+              w-full ease-linear transition-all duration-150"
+              placeholder="Correo" />
+              <div *ngFor="let validation of validationMessages.email">
+                <span *ngIf="formService.field(form, validation.type, 'email')" class="mt-2 text-sm text-red-500 ">
+                  {{ validation.message }}
+                </span>
+              </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-slate-600 text-xs font-bold mb-2"
+              htmlFor="grid-password">
+              Contraseña
+            </label>
+            <input
+              type="password" name="password" formControlName="password"
+              class="border-2 px-3 py-3 placeholder-slate-300 text-slate-600 
+              bg-white rounded text-sm shadow-lg border-gray-300 focus:outline-none focus:ring
+              w-full ease-linear transition-all duration-150"
+              placeholder="Contraseña" />
+              <div *ngFor="let validation of validationMessages.password">
+                <span *ngIf="formService.field(form, validation.type, 'password')" class="mt-2 text-sm text-red-500 ">
+                  {{ validation.message }}
+                </span>
+              </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <div class="g-recaptcha" data-sitekey="6LdbaGIpAAAAAJ2wnuWbfc9kru3eIkvWftXq5IZB"></div>
+          </div>
+        </form>
+      </div>
+  
+    <div class="flex items-center justify-end">
+      <button
+        class="bg-slate-500 text-white active:bg-slate-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+        (click)="closeModal()">
+        Cancelar
+      </button>
+      <button
+        class="bg-sky-600 text-white active:bg-sky-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+        [ngClass]="{ 'disabled:opacity-25': form.invalid }" [disabled]="form.invalid" (click)="save()">
+        Enviar
+      </button>
+    </div>
+  </div>

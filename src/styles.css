@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.img-index {
+    width: 50%;
+    transform: scaleX(-1);
+}
+
+.modal-content {
+    width: 50%;
+    height: 50%;
+    background-color: #ffff;
+}
+
+.table-white {
+    background-color: white;
+}
+
+.text-stone {
+    color: rgb(28, 25, 23);
+}
+
+.bg-custom {
+    background-color: #f6f6f6;
+}
+
+.red {
+    background: rgb(220 38 38);
+}
+
+.snackError {
+    color: white !important;
+    background-color: rgb(220 38 38) !important;
+}
+
+.snackSuccess {
+    color: white !important;
+    --tw-bg-opacity: 1;
+    background-color: rgba(16, 185, 129, var(--tw-bg-opacity)) !important;
+}
+
+.mat-mdc-snack-bar-container {
+    &.snack-success {
+        --mdc-snackbar-container-color: rgba(16, 185, 129);
+        --mat-mdc-snack-bar-button-color: #fff;
+        --mdc-snackbar-supporting-text-color: #fff;
+    }
+}
+
+.mat-mdc-snack-bar-container {
+    &.snack-error {
+        --mdc-snackbar-container-color: rgb(220 38 38);
+        --mat-mdc-snack-bar-button-color: #fff;
+        --mdc-snackbar-supporting-text-color: #fff;
+    }
+}
+
+.mat-mdc-menu-content .mat-mdc-menu-item {
+    background-color: white;
+    color: black;
+}
+
+.mat-mdc-menu-content {
+    background-color: white;
+    color: black;
+}
+
+.dialog-responsive {
+    width: 50%;
+}
+
+.ngx-datatable .datatable-footer .datatable-pager {
+    flex: 0 1 fit-content !important;
+    text-align: left !important;
+}
+
+@media only screen and (max-width: 760px) {
+    .dialog-responsive {
+        width: 100%;
+    }
+}
